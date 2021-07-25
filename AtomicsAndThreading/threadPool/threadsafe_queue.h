@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-07-25 16:38:45
- * @LastEditTime: 2021-07-25 21:56:41
+ * @LastEditTime: 2021-07-26 01:04:30
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /linux/AtomicsAndThreading/threadPool/threadSafe_queue.h
@@ -12,10 +12,12 @@
 #include <memory>
 #include <mutex>
 #include <queue>
+#include <thread>
+
 
 template <typename T> class threadsafe_queue {
 public:
-    threadsafe_queue() {}
+    threadsafe_queue();
     threadsafe_queue(threadsafe_queue const &other);
     void push(T new_value);
     void wait_and_pop(T &value);
@@ -76,10 +78,12 @@ template <typename T> std::shared_ptr<T> threadsafe_queue<T>::wait_and_pop() {
 
 template <typename T> bool threadsafe_queue<T>::try_pop(T &value) {
     std::lock_guard<std::mutex> lk(mut);
-    if (data_queue.empty)
+    if (data_queue.empty()) {
         return false;
+    }
     value = data_queue.front();
     data_queue.pop();
+    return true;
 }
 
 template <typename T> std::shared_ptr<T> threadsafe_queue<T>::try_pop() {
