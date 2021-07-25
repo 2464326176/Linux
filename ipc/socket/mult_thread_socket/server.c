@@ -22,7 +22,9 @@ void *do_work(void *arg)
     struct s_info *ts = (struct s_info*)arg;
     char buf[MAXLINE];
     char str[INET_ADDRSTRLEN];      //#define INET_ADDRSTRLEN 16  可用"[+d"查看
-
+    printf("%s at PORT %d connect successd\n",
+            inet_ntop(AF_INET, &(*ts).cliaddr.sin_addr, str, sizeof(str)),
+            ntohs((*ts).cliaddr.sin_port)); 
     while (1) {
         n = Read(ts->connfd, buf, MAXLINE);                     //读客户端
         if (n == 0) {
