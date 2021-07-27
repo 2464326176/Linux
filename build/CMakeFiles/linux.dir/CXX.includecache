@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/share/project/Linux/AtomicsAndThreading/threadPool/thread_pool.cpp
+thread_pool.h
+/home/share/project/Linux/AtomicsAndThreading/threadPool/thread_pool.h
+iostream
+-
+chrono
+-
+stdio.h
+-
+
+/home/share/project/Linux/AtomicsAndThreading/threadPool/thread_pool.h
+thread
+-
+mutex
+-
+atomic
+-
+condition_variable
+-
+functional
+-
+vector
+-
+queue
+-
+

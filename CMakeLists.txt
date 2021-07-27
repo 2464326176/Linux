@@ -8,9 +8,5 @@ set(CMAKE_CXX_STANDARD 11)
 
 
 #------------------Atmoics and threading------------------
-#AtomicsAndThreading/thread/createThread.cpp
 
-#AtomicsAndThreading/conditionVariable/notify_one.cpp
-#AtomicsAndThreading/lock/lock_guard.cpp
-#AtomicsAndThreading/mutex/call_one.cpp
-add_executable(linux AtomicsAndThreading/future/promise.cpp)
+add_executable(linux AtomicsAndThreading/threadPool/thread_pool.cpp)
