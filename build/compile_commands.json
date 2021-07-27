@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/home/share/project/Linux/build",
-  "command": "/bin/x86_64-linux-gnu-g++-10    -std=c++11 -pthread -DCMAKE_BUILD_TYPE=Debug -g -std=gnu++11 -o CMakeFiles/linux.dir/AtomicsAndThreading/threadPool/thread_pool.cpp.o -c /home/share/project/Linux/AtomicsAndThreading/threadPool/thread_pool.cpp",
-  "file": "/home/share/project/Linux/AtomicsAndThreading/threadPool/thread_pool.cpp"
-}
-]

@@ -1,3 +1,0 @@
-/home/share/project/Linux/build/CMakeFiles/rebuild_cache.dir
-/home/share/project/Linux/build/CMakeFiles/edit_cache.dir
-/home/share/project/Linux/build/CMakeFiles/linux.dir
