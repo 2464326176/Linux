@@ -1,1 +1,0 @@
-void log2screen(const void *str);

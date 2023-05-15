@@ -1,12 +1,15 @@
-cmake_minimum_required(VERSION 3.18)
+cmake_minimum_required(VERSION 3.0.0)
+project(linux VERSION 0.1.0)
 
-project(linux)
+include(CTest)
+enable_testing()
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+#set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1d1 -pthread -DCMAKE_BUILD_TYPE=Debug" )
+set(CMAKE_CXX_STANDARD 14)
 
-set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread -DCMAKE_BUILD_TYPE=Debug" )
-
-set(CMAKE_CXX_STANDARD 11)
+add_executable(linux main.cpp)
 
 
-#------------------Atmoics and threading------------------
-
-add_executable(linux AtomicsAndThreading/threadPool/thread_pool.cpp)
+set(CPACK_PROJECT_NAME ${PROJECT_NAME})
+set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
+include(CPack)
